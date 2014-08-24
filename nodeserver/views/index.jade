@@ -1,5 +1,19 @@
 extends layout
 
+block extrahead
+  link(rel='stylesheet', href='/stylesheets/custom.css')
+    
+
 block content
   h1= title
-  p Welcome to #{title}
+  table 
+    thead
+      th Name
+      th Club
+      th Comment
+    tbody
+     for player in players
+        tr
+          td #{player.name}
+          td #{player.club}
+          td #{player.comment}
